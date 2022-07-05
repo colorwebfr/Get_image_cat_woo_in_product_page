@@ -5,4 +5,9 @@
 				$category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
 				$image = wp_get_attachment_url($category_thumbnail);
 			}
-			echo '<img src="'.$image.'" alt="Logo '.$term->name.'">';
+			if($category_thumbnail)
+			{
+				echo '<div class="logoCatSingleProduct">
+						 <img src="'.$image.'" alt="Logo '.$term->name.'">
+					</div>';
+			}
